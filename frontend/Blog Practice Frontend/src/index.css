@@ -1,0 +1,71 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #f3f4f6; /* 與 Layout 的 bg-gray-100 一致 */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+  color: inherit; /* 讓組件自行決定文字顏色（交給 Tailwind）*/
+}
+a:hover {
+  color: inherit; /* 避免全域把 hover 顏色強制成藍色 */
+}
+
+/* 調整 body，避免與容器 padding 重複 */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: none; /* 交給 Tailwind 控制 */
+  padding: 0; /* 交給 Tailwind 控制 */
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent; /* 交給 Tailwind 控制 */
+  cursor: pointer;
+}
+button:hover {
+  border-color: inherit;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

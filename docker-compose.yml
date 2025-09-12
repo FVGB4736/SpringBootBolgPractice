@@ -1,0 +1,25 @@
+services:
+  # 定義所有服務的集合
+  # 我們的 PostgreSQL 資料庫
+  db:
+    # 使用最新的 PostgreSQL 鏡像作為基礎
+    image: postgres:latest
+    # 將主機的 5432 端口映射到容器的 5432 端口（PostgreSQL 預設端口）
+    ports:
+      - "5432:5432"
+    # 設定容器在主機重啟時自動重新啟動
+    restart: always
+    # 定義環境變數，用於配置 PostgreSQL
+    environment:
+      # 設定 PostgreSQL 的密碼（注意：這是範例值，生產環境應改進安全性）
+      POSTGRES_PASSWORD: PASSWORD
+
+  # 資料庫管理介面
+  adminer:
+    # 使用最新的 Adminer 鏡像作為基礎
+    image: adminer:latest
+    # 設定容器在主機重啟時自動重新啟動
+    restart: always
+    # 將主機的 8080 端口映射到容器的 8080 端口（Adminer Web 介面端口）
+    ports:
+      - "8081:8080"

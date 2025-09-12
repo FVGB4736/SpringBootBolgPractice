@@ -1,0 +1,11 @@
+package com.practice.demo.mappers;
+
+import com.practice.demo.domain.dtos.AuthorDto;
+import com.practice.demo.domain.entities.User;
+import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
+
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+public interface AuthorMapper {
+    AuthorDto toDto(User user);
+}
